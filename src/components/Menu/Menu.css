@@ -8,7 +8,7 @@
   }
   
   .Menu {
-    width: 90%;
+    width: 100%;
     height: 94px;
     z-index: 100;
   
@@ -22,17 +22,12 @@
     right: 0;
     padding-left: 5%;
     padding-right: 5%;
-  
-    --black: black;
-    --primary: #33962a;
     background: var(--black);
     border-bottom: 2px solid var(--primary);
   }
   body {
     --bodyPaddingTop: 94px;
     padding-top: var(--bodyPaddingTop);
-    --black: black;
-    background-color: var(--black); 
   }
   @media (max-width: 800px) {
     .Menu {

@@ -12,6 +12,7 @@ import Pagina404 from './pages/404';
 /**Estilo Padrão*/
 import './index.css';
 
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>

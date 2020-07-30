@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const Buttom  = styled.button `
-  /*color: var(--white);
-  */
   color: white;
-  border: 1px solid var(--white);
+  font-stretch: bolder;
+  border: 0px solid var(--white);
+  background-color: var(--primary);
   box-sizing: border-box;
   cursor: pointer;
   padding: 16px 24px;

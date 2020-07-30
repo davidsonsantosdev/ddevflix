@@ -20,15 +20,16 @@ export const Title = styled.h3`
 
 export const ExtraLink = styled.a`
   margin-left: 16px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  color: #33962a;
+  color: var(--white);
+  opacity: .7;
   transition: opacity .3s;
   &:hover,
   &:focus {
-    opacity: .5;
-    color: white;
+    opacity: 1;
+    color: var(--white);
+    font-weight: bolder;
   }
   @media (max-width: 800px) {
     display: block;
@@ -54,6 +55,6 @@ export const VideoCardList = styled.ul`
 export const VideoCardGroupContainer = styled.section`
   color: white;
   min-height: 197px;
-  margin-left: 5%;
+  margin-left: 1px;
   margin-bottom: 16px;
 `;

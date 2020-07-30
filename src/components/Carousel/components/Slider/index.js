@@ -11,11 +11,18 @@ const Container = styled.ul`
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 100%;
+    background-color: var( --primary);
     transform: initial;
+    opacity: 0.3;
     &:before {
       font-size: 30px;
+    }
+    transition: opacity .3s;
+    &:hover{
+      opacity: 0.9;
+
     }
   }
   
@@ -23,7 +30,7 @@ const Container = styled.ul`
     left: 0;
   }
   .slick-next {
-    right: 16px;
+    right: 0;
   }
 `;
 
@@ -42,12 +49,15 @@ const Slider = ({ children }) => (
   <Container>
     <SlickSlider {...{
       dots: false,
-      infinite: false,
+      infinite: true,
+      swipeToSlide: true,
       speed: 300,
+      slidesToScroll: 1,
+      slidesToShow: 1,
       centerMode: false,
       variableWidth: true,
       adaptiveHeight: true,
-    }}
+      }}
     >
       {children}
     </SlickSlider>

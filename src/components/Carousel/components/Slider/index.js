@@ -24,6 +24,9 @@ const Container = styled.ul`
       opacity: 0.9;
 
     }
+    @media (max-width: 800px){
+    visibility: hidden;
+  }
   }
   
   .slick-prev {

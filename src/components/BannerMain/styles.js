@@ -1,5 +1,40 @@
 import styled from 'styled-components';
 
+export const BannerMainContainer = styled.section`
+  height: 80vh;
+  position: relative;
+  color: var(--white);
+  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`}; 
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 800px) {
+    height: auto;
+    min-height: 50vh;
+  }
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 20%;
+  }
+
+  &:before {
+    top: 0;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+  }
+
+  &:after {
+    bottom: 0;
+    background: linear-gradient(0deg, #141414 0%, transparent 100%);
+  }
+`;
+
+
 export const ContentAreaContainer = styled.section`
   margin-left: 5%;
   margin-right: 5%;
@@ -65,41 +100,6 @@ ContentAreaContainer.Title = styled.h2`
   }
 `;
 
-export const BannerMainContainer = styled.section`
-  height: 80vh;
-  position: relative;
-  color: #fff;
-  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`}; 
-  background-size: cover;
-  background-position: center;
-  @media (max-width: 800px) {
-    height: auto;
-    min-height: 50vh;
-  }
-
-  &:after,
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 20%;
-  }
-
-  &:before {
-    top: 0;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-  }
-
-  &:after {
-    bottom: 0;
-    background: linear-gradient(0deg, #141414 0%, transparent 100%);
-  }
-`;
-
 export const WatchButton = styled.button`
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
@@ -118,7 +118,9 @@ export const WatchButton = styled.button`
   border-color: var(--black);
   transition: opacity .3s;
   display: none;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  
   @media (max-width: 800px) {
     display: block;
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 import SlickSlider from 'react-slick';
 import styled from 'styled-components';
+import arrow from '../../../../assets/img/arrow.svg';
+
 
 const Container = styled.ul`
   padding: 0;
@@ -10,14 +12,19 @@ const Container = styled.ul`
     z-index: 50;
     top: 0;
     bottom: 0;
-    margin: auto;
-    width: 60px;
-    height: 100%;
-    background-color: var( --primary);
+    margin: 0;
+    width: 95px;
+    height: 197px;
+    border-radius: 5px;
+    background-color: var( --white);
+    background: url(${arrow});
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position:left center;
     transform: initial;
     opacity: 0.3;
     &:before {
-      font-size: 30px;
+      font-size: 0px;
     }
     transition: opacity .3s;
     &:hover{
@@ -25,12 +32,14 @@ const Container = styled.ul`
 
     }
     @media (max-width: 800px){
-    visibility: hidden;
+      visibility: hidden;
+    }
   }
-  }
-  
+
   .slick-prev {
     left: 0;
+    transform: scaleX(-1);
+    
   }
   .slick-next {
     right: 0;
@@ -60,7 +69,7 @@ const Slider = ({ children }) => (
       centerMode: false,
       variableWidth: true,
       adaptiveHeight: true,
-      }}
+    }}
     >
       {children}
     </SlickSlider>

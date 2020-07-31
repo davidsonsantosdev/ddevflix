@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
-import Button from '../../../components/Button';
+// import Button from '../../../components/Button';
 
 
 function CadastroCategoria() {
@@ -108,9 +108,9 @@ function CadastroCategoria() {
           </label>
         </div> */}
 
-        <Button as={Link} itemID="Cadastro" className="ButtonLink" to="" >
+        <button>
           Cadastrar
-            </Button>
+            </button>
       </form>
 
 

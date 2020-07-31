@@ -47,7 +47,7 @@ function CadastroCategoria() {
     }
   }, []);
 
-
+// comentário
   return (
     <PageDefault>
       <h1>Cadastro de Categoria: {values.nome}</h1>

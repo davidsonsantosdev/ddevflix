@@ -30,11 +30,26 @@ function CadastroCategoria() {
       infosDoEvento.target.value
     );
   }
-  // ============Animação
-
+  // ============Dados Externos
+  useEffect(() => {
+      const URL = window.location.href.includes('localhost')
+      ? 'http://localhost:8082/categorias'
+      : 'https://ddevflix.herokuapp.com/categorias';
+      fetch(URL)
+        .then(async (respostaDoServer) => {
+          if (respostaDoServer.ok) {
+            const resposta = await respostaDoServer.json();
+            setCategorias(resposta);
+            return;
+          }
+          throw new Error('Não foi possível pegar os dados');
+        })
+    
+  }, []);
+  /**
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
-      const URL = 'http://ddevflix.herokuapp.com/categorias';
+      const URL = 'https://ddevflix.herokuapp.com/categorias';
       fetch(URL)
         .then(async (respostaDoServer) => {
           if (respostaDoServer.ok) {
@@ -46,6 +61,7 @@ function CadastroCategoria() {
         })
     }
   }, []);
+  */
 
 // comentário
   return (

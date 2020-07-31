@@ -34,7 +34,7 @@ function CadastroCategoria() {
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
-      const URL = 'http://localhost:8080/categorias';
+      const URL = 'http://localhost:8082/categorias';
       fetch(URL)
         .then(async (respostaDoServer) => {
           if (respostaDoServer.ok) {
@@ -107,23 +107,19 @@ function CadastroCategoria() {
             />
           </label>
         </div> */}
-
         <button>
           Cadastrar
             </button>
       </form>
-
-
       <ul>
         {categorias.map((categoria, indice) => {
           return (
             <li key={`${categoria}${indice}`}>
-              {categoria.nome}
+              {categoria.titulo}
             </li>
           )
         })}
       </ul>
-
       <Link to="/">
         Ir para home
       </Link>

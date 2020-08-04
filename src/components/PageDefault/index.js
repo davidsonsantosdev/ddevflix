@@ -6,7 +6,7 @@ import Menu from '../Menu';
 import Footer from '../Footer';
 
 //**Para estilizar no js precisar ser o ultimo import */
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 /**Estilo geral dos conteúdos dentro da tag <Main> */
 const Main = styled.main`
@@ -16,6 +16,9 @@ flex: 1;
 padding-top: 94px;
 padding-left: 5%;
 padding-right: 5%;
+${({ paddingAll }) => css`
+        padding: ${paddingAll};
+    `}
 `;
 
 
@@ -30,11 +33,11 @@ padding-right: 5%;
  * e usando descontrução fica como abaixo.
  * 
  */
-function PageDefault({ children }) {
+function PageDefault({ children, paddingAll }) {
     return (
         <>
             <Menu />
-            <Main>
+            <Main paddingAll={paddingAll}>
                 {children}
             </Main>
             <Footer />

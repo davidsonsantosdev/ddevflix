@@ -14,10 +14,10 @@ background-color: var(--black);
 color: var(--white);
 flex: 1;
 padding-top: 94px;
-padding-left: 5%;
-padding-right: 5%;
+padding-left: 0px;
+padding-right: 0px;
 ${({ paddingAll }) => css`
-        padding: ${paddingAll};
+        padding-bottom: ${paddingAll};
     `}
 `;
 
